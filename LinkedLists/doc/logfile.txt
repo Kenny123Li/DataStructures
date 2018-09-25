@@ -1,0 +1,52 @@
+Class documentation
+<---- javadoc command: ---->
+C:\Program Files\Java\jdk1.8.0_101\bin\javadoc.exe
+-author
+-version
+-nodeprecated
+-private
+-tag
+pre:a:Precondition:
+-tag
+post:a:Postcondition:
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+1.8
+-classpath
+C:\Program Files (x86)\BlueJ\lib\bluejcore.jar;C:\Program Files (x86)\BlueJ\lib\junit-4.8.2.jar;C:\Users\kmli\Desktop\Github Folder\color-lab-Kenny123Li\ColorLabs17\bookClasses;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-core.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-device.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-gpio-extension.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-service.jar;C:\Users\kmli\Desktop\Github Folder\DataStructures\LinkedLists
+-d
+C:\Users\kmli\Desktop\Github Folder\DataStructures\LinkedLists\doc
+-encoding
+UTF-8
+-charset
+UTF-8
+-docletpath
+C:\Program Files (x86)\BlueJ\lib\bjdoclet.jar
+-doclet
+bluej.doclet.doclets.formats.html.HtmlDoclet
+C:\Users\kmli\Desktop\Github Folder\DataStructures\LinkedLists\LinkedList.java
+<---- end of javadoc command ---->
+Loading source file C:\Users\kmli\Desktop\Github Folder\DataStructures\LinkedLists\LinkedList.java...
+Constructing Javadoc information...
+C:\Users\kmli\Desktop\Github Folder\DataStructures\LinkedLists\LinkedList.java:8: error: cannot find symbol
+    private Node first;//all a LL is is a reference to the very first node
+            ^
+  symbol:   class Node
+  location: class LinkedList
+Standard Doclet version 1.8.0_101
+Building tree for all the packages and classes...
+Generating C:\Users\kmli\Desktop\Github Folder\DataStructures\LinkedLists\doc\LinkedList.html...
+Generating C:\Users\kmli\Desktop\Github Folder\DataStructures\LinkedLists\doc\package-frame.html...
+Generating C:\Users\kmli\Desktop\Github Folder\DataStructures\LinkedLists\doc\package-summary.html...
+Generating C:\Users\kmli\Desktop\Github Folder\DataStructures\LinkedLists\doc\constant-values.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating C:\Users\kmli\Desktop\Github Folder\DataStructures\LinkedLists\doc\allclasses-frame.html...
+Generating C:\Users\kmli\Desktop\Github Folder\DataStructures\LinkedLists\doc\allclasses-noframe.html...
+Generating C:\Users\kmli\Desktop\Github Folder\DataStructures\LinkedLists\doc\index.html...
+Generating C:\Users\kmli\Desktop\Github Folder\DataStructures\LinkedLists\doc\stylesheet.css...
+Note: Custom tags that could override future standard tags:  @pre, @post. To avoid potential overrides, use at least one period character (.) in custom tag names.
+1 warning
