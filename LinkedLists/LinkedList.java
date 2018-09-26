@@ -24,6 +24,7 @@ public class LinkedList
         // initialise instance variables
         first = null;
     }
+    
     /**
      * Adds an element to the front of the LL
      * @param element to add
@@ -57,4 +58,57 @@ public class LinkedList
         first = first.next;
         return data;
     }
+    
+    public ListIterator listIterator()
+    {
+        return new LinkedListIterator();
+    }
+    
+    class LinkedListIterator implements ListIterator
+    {
+        private Node position;
+        private Node previous; //remove
+        private boolean isAfterNext;
+        
+        public LinkedListIterator()
+        {
+            position = null;
+            previous = null;
+            isAfterNext = false;
+        }
+        
+        public Object next()
+        {
+            if(!hasNext()){throw new NoSuchElementException();}
+            
+            previous = position; //so I can remove item
+            isAfterNext = true;
+            
+            if(position == null)
+            {
+                position = first;//address/reference to Objects
+            }
+            
+            else{
+                position = position.next;
+            }
+            return position.data;
+        }
+        
+         /**
+            * Tests if there is an element after the iterator position
+            * @return true if there is an element after the iterator position
+              */
+        public boolean hasNext()
+        {
+            if (position == null)
+            {
+                return first != null;
+            }
+            else{
+                return position.next != null;
+            }
+        }
+    }
+    
 }

@@ -11,4 +11,6 @@ comment2.text=\r\n\ Returns\ first\ element\ in\ the\ LL\r\n\ @returns\ first\ e
 comment3.params=
 comment3.target=java.lang.Object\ removeFirst()
 comment3.text=\r\n\ Removes\ the\ first\ element\ in\ the\ LL\r\n\ @return\ the\ removed\ element\r\n
-numComments=4
+comment4.params=
+comment4.target=ListIterator\ listIterator()
+numComments=5
