@@ -6,7 +6,7 @@ public class LinkedList
 {
     //instance variables
     private Node first;//all a LL is is a reference to the very first node
-
+    private int currentSize;
     class Node
     {
         //Old School
@@ -23,6 +23,7 @@ public class LinkedList
     {
         // initialise instance variables
         first = null;
+        currentSize = 0;
     }
     
     /**
@@ -35,6 +36,7 @@ public class LinkedList
         newNode.data = element;//points to object
         newNode.next = first;
         first = newNode;
+        currentSize++;
     }
     
     /**
@@ -56,12 +58,54 @@ public class LinkedList
         if(first == null){throw new NoSuchElementException();}
         Object data = first.data;
         first = first.next;
+        currentSize--;
         return data;
     }
     
     public ListIterator listIterator()
     {
         return new LinkedListIterator();
+    }
+    
+    public void reverse()
+    {
+        LinkedList rev = new LinkedList();
+        Node current = first;
+        while(current != null)
+        {
+            current = current.next;
+            rev.addFirst(this.removeFirst());
+        }
+        first = rev.first;
+    }
+    
+    public void realreverse()
+    {
+        Node previous = first;
+        Node current = first.next;
+        first.next = null;
+ 
+        if(first == null){return;}
+        while(current != null)
+        {
+            Node next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        first = previous;
+    }
+    
+    public int size()
+    {
+        int size = 0;
+        Node current = first;
+        while(current != null)
+        {
+            current = current.next;
+            size++;
+        }
+        return size;
     }
     
     class LinkedListIterator implements ListIterator
@@ -130,6 +174,7 @@ public class LinkedList
                 //now position and position.next point to newNode
                 position.next = newNode;//set both because you need to call next in order to remove something
                 position = newNode;
+                currentSize ++;
             }
             
             isAfterNext = false;
@@ -151,6 +196,7 @@ public class LinkedList
             else
             {
                 previous.next = position.next;
+                currentSize--;
             }
             position = previous;//previous "replaces" position
             //acts as if the position before this was called was removed since nothing points to it

@@ -1,10 +1,7 @@
 
 
 /**
- * Write a description of class ListIterator here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Kenneth li
  */
 public interface ListIterator
 {
