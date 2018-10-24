@@ -1,6 +1,7 @@
 import java.util.NoSuchElementException;
 /**
  * Kenneth Li
+ * LinkedList
  */
 public class LinkedList
 {
@@ -106,6 +107,68 @@ public class LinkedList
             size++;
         }
         return size;
+    }
+    
+    /*
+     * returns object at given index
+     * @param int index
+     * @return object at index
+     */
+    public Object get(int n)
+    {
+        return getNode(n).data;//getNode returns the node we need so all we need to do is return its data
+    }
+    
+    /*
+     * sets object at given index and moves current object 1 down the array
+     * @param int index, Object new data to put in
+     */
+    public void set(int n, Object newElement)
+    {
+        if(!(n==0))
+        {
+            Node temp = getNode(n);//gets curent node at index n
+            Node previous = getNode(n-1);//gets node before index n
+            Node add = new Node();//creates node to be added at index n
+            add.data = newElement;
+            previous.next = add;//makes add at the current index
+            add.next = temp;//makes add's next node the node that was in that index before
+        }
+        else
+        {
+            addFirst(newElement);
+        }
+        
+    }
+        
+    private Node getNode(int n)
+    {
+        Node move = first;
+        while(n>=1)
+        {
+            move = move.next;
+            n--;
+        }
+        return move;
+    }
+    
+    /*
+     * returns a boolean to see whether the object is in the list
+     * @param Object to check
+     * @return boolean true or false
+     */
+    public boolean contains(Object obj)
+    {
+        Node check = first;
+        while(check.data != null)//traverses through all links in the linked list
+        {
+            if(check.data.equals(obj))//checks to see if any node has data equal to object
+            {
+                return true;//can stop checking rest of list if true
+            }
+            check = check.next;//follows link
+        }
+        return false;//if loop ends, then there are no matches
     }
     
     class LinkedListIterator implements ListIterator

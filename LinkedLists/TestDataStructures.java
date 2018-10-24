@@ -12,20 +12,38 @@ public class TestDataStructures
         LinkedList test = new LinkedList();
         
         String word = "New";
-        test.addFirst("Five");
+        test.addFirst("five");
         test.addFirst(new String("four"));
         test.addFirst("three");
         test.addFirst("two");
         test.addFirst("one");
         test.addFirst("zero");
-        test.realreverse();
-        System.out.println(test.size());
         ListIterator iter = test.listIterator();
         while(iter.hasNext())
         {
             System.out.println(iter.next());
         }
-        String word2;
+        System.out.println(test.get(1));
+        System.out.println(test.get(2));
+        test.set(1, "eight");
+        System.out.println(test.get(0));
+        System.out.println(test.get(1));
+        System.out.println(test.get(2));
+        System.out.println(test.get(3));
+        System.out.println(test.contains("five"));
+        
+        while(iter.hasNext())
+        {
+            System.out.println(iter.next());
+        }
+        //test.realreverse();
+        /*System.out.println(test.size());
+        ListIterator iter = test.listIterator();
+        while(iter.hasNext())
+        {
+            System.out.println(iter.next());
+        }
+        String word2;*/
         
         //word2 = test.getFirst();//this returns an object
         //OLD school!! must cast the Object
